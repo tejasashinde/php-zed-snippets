@@ -1,0 +1,277 @@
+{
+  "Array": {
+    "prefix": "php-array",
+    "body": "\\$${1:variable} = [${2:'value'}];",
+    "description": "Array Short Syntax"
+  },
+  "Associative Array": {
+    "prefix": "php-arraykv",
+    "body": [
+      "\\$${1:variable} = [",
+      "    '${2:key}' => ${3:value},",
+      "];"
+    ],
+    "description": "Associative Array"
+  },
+  "Do While Loop": {
+    "prefix": "php-dowhile",
+    "body": [
+      "do {",
+      "    $0",
+      "} while (${1:condition});"
+    ],
+    "description": "Do While Loop"
+  },
+  "Enum Definition": {
+    "prefix": "php-enum",
+    "body": [
+      "enum ${1:Name}: ${2:string} {",
+      "    case ${3:VALUE} = '${4:value}';",
+      "}"
+    ],
+    "description": "Enum Definition (PHP 8.1+)"
+  },
+  "Exit": {
+    "prefix": "php-exit",
+    "body": "exit(${1});",
+    "description": "Exit script"
+  },
+  "PHP File Namespace": {
+    "prefix": "php-file-ns",
+    "body": [
+      "<?php",
+      "declare(strict_types=1);",
+      "",
+      "namespace ${1:App};",
+      "",
+      "$0"
+    ],
+    "description": "PHP File with Namespace"
+  },
+  "If Statement": {
+    "prefix": "php-if",
+    "body": [
+      "if (${1:condition}) {",
+      "    $0",
+      "}"
+    ],
+    "description": "If Statement"
+  },
+  "Switch Statement": {
+    "prefix": "php-switch",
+    "body": [
+      "switch (\\$${1:variable}) {",
+      "    case ${2:value}:",
+      "        ${3:// code}",
+      "        break;",
+      "    $0",
+      "    default:",
+      "        ${4:// code}",
+      "        break;",
+      "}"
+    ],
+    "description": "Switch block"
+  },
+  "If Else Statement": {
+    "prefix": "php-ifelse",
+    "body": [
+      "if (${1:condition}) {",
+      "    ${2:// code}",
+      "} else {",
+      "    $0",
+      "}"
+    ],
+    "description": "If Else Statement"
+  },
+  "Interface Definition": {
+    "prefix": "php-interface",
+    "body": [
+      "interface ${1:Name} {",
+      "    public function ${2:method}(${3:mixed \\$param}): ${4:void};",
+      "}"
+    ],
+    "description": "Interface Definition"
+  },
+  "Function Definition": {
+    "prefix": "php-fn",
+    "body": [
+      "function ${1:name}(${2:mixed \\$param}): ${3:void} {",
+      "    $0",
+      "}"
+    ],
+    "description": "Function Definition (PHP 8 typed)"
+  },
+  "Public Function Definition": {
+    "prefix": "php-pubfn",
+    "body": [
+      "public function ${1:name}(${2:mixed \\$param}): ${3:void} {",
+      "    $0",
+      "}"
+    ],
+    "description": "Public Function Definition (PHP 8 typed)"
+  },
+  "Private Function Definition": {
+    "prefix": "php-prifn",
+    "body": [
+      "private function ${1:name}(${2:mixed \\$param}): ${3:void} {",
+      "    $0",
+      "}"
+    ],
+    "description": "Private Function Definition (PHP 8 typed)"
+  },
+  "Constructor Function Definition": {
+    "prefix": "php-constfn",
+    "body": [
+      "public function __construct(",
+      "    ${1:private readonly ?${2:Type} \\$${3:var}${4: = null}}",
+      ") {",
+      "    $0",
+      "}"
+    ],
+    "description": "Constructor with Property Promotion (PHP 8)"
+  },
+  "Redirect": {
+    "prefix": "php-redirect",
+    "body": [
+      "header('Location: ${1:/}', true, 302);",
+      "exit();"
+    ],
+    "description": "HTTP Redirect"
+  },
+  "Require Once": {
+    "prefix": "php-requireonce",
+    "body": "require_once __DIR__ . '/${1:file.php}';",
+    "description": "Require Once"
+  },
+  "Isset Function": {
+    "prefix": "php-isset",
+    "body": [
+      "isset(\\$${1:variable});"
+    ],
+    "description": "PHP isset() function"
+  },
+  "Empty Function": {
+    "prefix": "php-empty",
+    "body": [
+      "empty(\\$${1:variable});"
+    ],
+    "description": "PHP empty() function"
+  },
+  "Count Function": {
+    "prefix": "php-count",
+    "body": [
+      "count(${1:\\$array});"
+    ],
+    "description": "PHP count() function"
+  },
+  "Try Catch Block": {
+    "prefix": "php-trycatch",
+    "body": [
+      "try {",
+      "    $0",
+      "} catch (\\Throwable ${1:\\$e}) {",
+      "    echo ${1:\\$e}->getMessage();",
+      "}"
+    ],
+    "description": "Try catch block (PHP 8)"
+  },
+  "Ternary Operator": {
+    "prefix": "php-ternary",
+    "body": "${1:condition} ? ${2:true} : ${3:false}",
+    "description": "Ternary Operator"
+  },
+  "While Loop": {
+    "prefix": "php-while",
+    "body": [
+      "while (${1:condition}) {",
+      "    $0",
+      "}"
+    ],
+    "description": "While Loop"
+  },
+  "Class":{
+	  "prefix":"php-class",
+	  "body":[
+		"class ${1:ClassName}",
+		"{",
+		"    $0",
+		"}"
+	  ],
+	  "description":"PHP Class"
+	},
+	"Abstract Class":{
+	  "prefix":"php-absclass",
+	  "body":[
+		"abstract class ${1:AbstractClassName}",
+		"{",
+		"    $0",
+		"}"
+	  ],
+	  "description":"PHP Abstract Class"
+	},
+  "Use Statement": {
+    "prefix": "php-use",
+    "body": "use ${1:Namespace\\\\Class};",
+    "description": "Use Statement"
+  },
+  "Public Static Function": {
+    "prefix": "php-pubsf",
+    "body": [
+      "public static function ${1:method}(${2:mixed \\$args}): ${3:void}",
+      "{",
+      "    $0",
+      "}"
+    ],
+    "description": "Public Static Function (PHP 8 typed)"
+  },
+  "Private Static Function": {
+    "prefix": "php-prisf",
+    "body": [
+      "private static function ${1:method}(${2:mixed \\$args}): ${3:void}",
+      "{",
+      "    $0",
+      "}"
+    ],
+    "description": "Private Static Function (PHP 8 typed)"
+  },
+  "Protected Static Function": {
+    "prefix": "php-prosf",
+    "body": [
+      "protected static function ${1:method}(${2:mixed \\$args}): ${3:void}",
+      "{",
+      "    $0",
+      "}"
+    ],
+    "description": "Protected Static Function (PHP 8 typed)"
+  },
+  "For Loop": {
+    "prefix": "php-fl",
+    "body": [
+      "for (\\$${1:i} = ${2:0}; \\$${1:i} < ${3:count}; \\$${1:i}++) {",
+      "    $0",
+      "}"
+    ],
+    "description": "For-loop"
+  },
+  "Foreach Key Value": {
+    "prefix": "php-fekv",
+    "body": [
+      "foreach (${1:\\$items} as ${2:\\$key} => ${3:\\$value}) {",
+      "    $0",
+      "}"
+    ],
+    "description": "Foreach Key => Value Loop"
+  },
+  "Simple Comment Block":{
+	  "prefix":"php-comment-blk",
+	  "body":[
+		"/*",
+		"|--------------------------------------------------------------------------",
+		"| ${1:Comment title}",
+		"|--------------------------------------------------------------------------",
+		"*/",
+		"$0"
+	  ],
+	  "description":"Simple Comment Block"
+	}
+}
